@@ -17,7 +17,7 @@ function filtrar1(){
     function montartabela(lista){
     //    window.alert(lista);
         var tabela = 
-        "<table border'1' align='center' width='80%' cellspacing='2'>" +
+        "<table class='table' border'1' align='center' width='80%' cellspacing='2'>" +
         "<tr>" +
         "<th>Data</th> " +
         "<th>Alarme</th>" +
@@ -59,7 +59,7 @@ function filtrarcontagem(){
 
     function montartabelacontagem(lista){
         var tabela = 
-        "<table border'1' align='center' width='80%' cellspacing='2'>" +
+        "<table class='table' border'1' align='center' width='80%' cellspacing='2'>" +
         "<tr>" +
         "<th>Alarme</th> " +
         "<th> QTD no Período </th>" +
