@@ -114,7 +114,7 @@ function carregarusuario(){
     }else{
         var usuarioJson = JSON.parse(usuario);
         document.getElementById("dados").innerHTML = 
-        "<h3>Nome: " + usuarioJson.nome + " <br>Email: " + usuarioJson.email + " <br>RACF: " + usuarioJson.nome +"</h3>" ;
+        "<h3>Nome: " + usuarioJson.nome + " <br>Email: " + usuarioJson.email + "teste" + "</h3>" ;
         document.getElementById("foto").innerHTML=
         "<img width='25%' heigth='25%' alt='Sem foto' src=imagens/" + usuarioJson.foto + ">";
     }
@@ -139,7 +139,7 @@ function logar(){
         .then(res => res.json())
         .then(res => {
             localStorage.setItem("usuariologado",JSON.stringify(res));
-            window.location="usuario.html";
+            window.location="https://front-mon1.herokuapp.com/usuario.html";
         })
         .catch(err => {
             window.alert("Deu ruim");
