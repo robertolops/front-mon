@@ -37,7 +37,10 @@
           </div>
           <br>
           <button onclick="logar()" type="button" class="btn btn-primary">Login</button>
+              <br><br>
+          <a href="https://accounts.google.com/signin/v2/usernamerecovery?passive=1209600&continue=https%3A%2F%2Faccounts.google.com%2Fb%2F1%2FAddMailService&followup=https%3A%2F%2Faccounts.google.com%2Fb%2F1%2FAddMailService&flowName=GlifWebSignIn&flowEntry=ServiceLogin target="_blank">Esqueceu a Senha?</a>
 
+      
     </div>
 
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
