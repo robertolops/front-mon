@@ -43,7 +43,7 @@ function CriaPDF1() {
 
 function exportar() {
 
-    fetch(API+"/contagem/" +
+    fetch(API+"/data/" +
     document.getElementById("datainicio").value + 
     "/" + document.getElementById("datafim").value)
         .then(res => res.json())
