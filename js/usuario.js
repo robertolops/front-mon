@@ -1,3 +1,44 @@
+function exporta1(){
+
+    fetch(API+"/contagem/" +
+    document.getElementById("datainicio").value + 
+    "/" + document.getElementById("datafim").value)
+        .then(res => res.json())
+        .then(res => gerarCSV1(res));
+//        .catch(err => {
+  //          window.alert("Erro na busca da tabela!");
+    //    });
+
+
+    }
+
+    function gerarCSV1(resultado) {
+
+        let relatorio = document.getElementById("resultado");
+    
+        if (resultado == null || resultado.lenght == 0) {
+            relatorio.innerHTML = `<p>Nenhum registro encontrado.</p>`;
+            return;
+        }
+        
+        let csv = "";
+
+        for (cont=0;cont<resultado.length;cont+=2){
+            csv += `${resultado[cont]};${resultado[cont+1]};\n`; 
+       
+
+             
+        };
+
+        let hiddenElement = document.createElement('a');
+        hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+        hiddenElement.target = '_blank';
+        hiddenElement.download = 'solicitacoes.csv'
+        hiddenElement.click();
+    
+    }
+
+
 function CriaPDF() {
     var minhaTabela = document.getElementById('lista').innerHTML;
     var style = "<style>";
