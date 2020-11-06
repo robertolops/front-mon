@@ -26,7 +26,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text" id="basic-addon1">@</span>
             </div>
-            <input id="txtemail" type="email" class="form-control" placeholder="Digite seu email" aria-label="Username" aria-describedby="basic-addon1">
+            <input id="txtemail" type="email" class="form-control" placeholder="Digite seu email ou RACF" aria-label="Username" aria-describedby="basic-addon1">
           </div>
 
           <div class="input-group mb-3">
