@@ -1,4 +1,48 @@
-//const URL="https://java-api-spring-bot.herokuapp.com/validacpf?cpf="
+function CriaPDF() {
+    var minhaTabela = document.getElementById('lista').innerHTML;
+    var style = "<style>";
+    style = style + "table {width: 100%;font: 20px Calibri;}";
+    style = style + "table, th, td {border: solid 1px #DDD; border-collapse: collapse;";
+    style = style + "padding: 2px 3px;text-align: center;}";
+    style = style + "</style>";
+
+    // CRIA UM OBJETO WINDOW
+    var win = window.open('', '', 'height=700,width=800');
+    win.document.write('<html><head>');
+    win.document.write('<title> Relatório </title>');   // <title> CABEÇALHO DO PDF.
+    win.document.write(style);                                     // INCLUI UM ESTILO NA TAB HEAD
+    win.document.write('</head>');
+    win.document.write('<body>');
+    win.document.write(minhaTabela);                          // O CONTEUDO DA TABELA DENTRO DA TAG BODY
+    win.document.write('</body></html>');
+    win.document.close(); 	                                         // FECHA A JANELA
+    win.print();                                                            // IMPRIME O CONTEUDO
+}
+
+
+
+function gerarCSV(dados) {
+   
+    let relatorio = document.getElementById("lista");
+
+    if (dados == null || dados.lenght == 0) {
+        relatorio.innerHTML = `<p>Nenhum registro encontrado.</p>`;
+        return;
+    }
+    
+    let csv = "";
+    
+    dados.forEach(resposta => {
+        //csv += `${e.campo1};${e.campo2};${e.campo3};${e.campo4};${e.campo4}\n`;
+        csv += `${resposta.nomeTecnico};${resposta.operadora};${resposta.pdvidsolic.nome};${resposta.data};${resposta.hora}\n`;        
+    });
+    let hiddenElement = document.createElement('a');
+    hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
+    hiddenElement.target = '_blank';
+    hiddenElement.download = 'solicitacoes.csv'
+    hiddenElement.click();
+
+}
 
 function filtrar1(){
 
