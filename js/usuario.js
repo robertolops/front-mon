@@ -66,7 +66,7 @@ function gerarCSV(lista) {
     
     lista.forEach(resultado => {
     
-        csv += `${resultado.data};${resultado.alarme};${resultado.equipamento}\n`;        
+        csv += `${resultado.data};${resultado.alarme.nome};${resultado.equipamento.ip}\n`;        
     });
     let hiddenElement = document.createElement('a');
     hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
