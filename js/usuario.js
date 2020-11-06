@@ -43,7 +43,7 @@ function CriaPDF1() {
 
 function gerarCSV(dados) {
    
-    let relatorio = document.getElementById("lista");
+    let relatorio = document.getElementById("resultado");
 
     if (dados == null || dados.lenght == 0) {
         relatorio.innerHTML = `<p>Nenhum registro encontrado.</p>`;
@@ -53,8 +53,8 @@ function gerarCSV(dados) {
     let csv = "";
     
     dados.forEach(resposta => {
-        //csv += `${e.campo1};${e.campo2};${e.campo3};${e.campo4};${e.campo4}\n`;
-        csv += `${resposta.nomeTecnico};${resposta.operadora};${resposta.pdvidsolic.nome};${resposta.data};${resposta.hora}\n`;        
+        //csv += `${e.campo1};${e.campo2};${e.campo3}\n`;
+        csv += `${resposta.data};${resposta.alarme};${resposta.equipamento}\n`;        
     });
     let hiddenElement = document.createElement('a');
     hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
