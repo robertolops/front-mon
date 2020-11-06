@@ -41,20 +41,32 @@ function CriaPDF1() {
 }
 
 
-function gerarCSV(dados) {
-   
-    let relatorio = document.getElementById("resultado");
+function exportar() {
 
-    if (dados == null || dados.lenght == 0) {
+    fetch(API+"/contagem/" +
+    document.getElementById("datainicio").value + 
+    "/" + document.getElementById("datafim").value)
+        .then(res => res.json())
+        .then(res => gerarCSV(res));
+
+
+}
+
+
+function gerarCSV(lista) {
+   
+    let relatorio = document.getElementById("lista");
+
+    if (lista == null || lista.lenght == 0) {
         relatorio.innerHTML = `<p>Nenhum registro encontrado.</p>`;
         return;
     }
     
     let csv = "";
     
-    dados.forEach(resposta => {
-        //csv += `${e.campo1};${e.campo2};${e.campo3}\n`;
-        csv += `${resposta.data};${resposta.alarme};${resposta.equipamento}\n`;        
+    lista.forEach(resultado => {
+    
+        csv += `${resultado.data};${resultado.alarme};${resultado.equipamento}\n`;        
     });
     let hiddenElement = document.createElement('a');
     hiddenElement.href = 'data:text/csv;charset=utf-8,' + encodeURI(csv);
