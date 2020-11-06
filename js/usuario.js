@@ -231,7 +231,7 @@ function carregarusuario(){
     }else{
         var usuarioJson = JSON.parse(usuario);
         document.getElementById("dados").innerHTML = 
-        "<h3>Nome: " + usuarioJson.nome + " <br>Email: " + usuarioJson.email + "teste" + "</h3>" ;
+        "<h3>Nome: " + usuarioJson.nome + " <br>Email: " + usuarioJson.email + "</h3>" ;
         document.getElementById("foto").innerHTML=
         "<img width='25%' heigth='25%' alt='Sem foto' src=imagens/" + usuarioJson.foto + ">";
     }
